@@ -15,7 +15,10 @@
               <li><a href= "/teammates">Teammates</a></li>
               <li><a href="/tasks">Tasks</a></li>
               <li><a href="/documents">Documents</a></li>
+
+
             </ul>
+
           </div><!-- /.nav-collapse -->
         </div><!-- /.container -->
       </div><!-- /.navbar-inner -->
@@ -28,34 +31,31 @@ padding-top: 60px;
 <div class="row offset1">
   margin-top: 200px;
   margin-left: 60px;
-  <h1>Tasks</h1>
+  <h1>Teammates</h1>
 </div>
 
 <table class="table-bordered offset1">
   <tr>
     <th>Name</th>
-    <th>Description</th>
-    <th>Due Date</th>
-    <th></th>
-    <th></th>
+    <th>Email</th>
     <th></th>
   </tr>
 
-<% @tasks.each do |task| %>
+<% @teammates.each do |teammate| %>
   <tr>
-    <td><%= task.name %></td>
-    <td><%= task.description %></td>
-    <td><%= task.duedate.to_formatted_s(:long_ordinal) %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= teammate.name %></td>
+    <td><%= teammate.email %></td>
+    <td><%= link_to 'Show', teammate %></td>
+    <td><%= link_to 'Edit', edit_teammate_path(teammate) %></td>
+    <td><%= link_to 'Delete', teammate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
+
 <div class="row offset1" >
-  <%= link_to 'New Task', new_task_path %>
+  <%= link_to 'New Teammate', new_teammate_path %>
 </div>
 </body>
 

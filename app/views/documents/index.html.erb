@@ -1,0 +1,57 @@
+<header>
+<div class="container">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/">GetItDone</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+          <li><a href= "/teammates">Teammates</a></li>
+          <li><a href="/tasks">Tasks</a></li>
+          <li><a href="/documents">Documents</a></li>
+
+        </ul>
+
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </div><!-- /.navbar-inner -->
+</div><!-- /.navbar -->
+  </div>
+  </header>
+<body>
+padding-top: 60px;
+<div class="row offset1">
+   margin-top: 200px;
+  margin-left: 60px;
+  <h1>Project Documents</h1>
+      </div>
+
+<table class="table-bordered offset1">
+  <tr>
+    <th>Name</th>
+    <th>Date Modified</th>
+    <th></th>
+  </tr>
+
+<% @documents.each do |document| %>
+  <tr>
+    <td><%= document.name %></td>
+    <td><%= document.datemodified.to_formatted_s(:long_ordinal) %></td>
+    <td><%= link_to 'Show', document %></td>
+    <td><%= link_to 'Edit', edit_document_path(document) %></td>
+    <td><%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<div class="row offset1" >
+<%= link_to 'New Document', new_document_path %>
+</div>
+</body>
