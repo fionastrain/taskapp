@@ -31,7 +31,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="43" selection-start="533" selection-end="533" vertical-scroll-proportion="-8.125">
+            <state line="18" column="20" selection-start="787" selection-end="791" vertical-scroll-proportion="-11.25">
               <folding />
             </state>
           </provider>
@@ -46,19 +46,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="92" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.25">
+            <state line="14" column="25" selection-start="172" selection-end="172" vertical-scroll-proportion="0.5412371">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="32" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.70873785">
+            <state line="60" column="32" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,7 +120,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/assets/stylesheets/documents.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/models/document.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20130204045429_create_documents.rb" />
@@ -135,6 +134,7 @@
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -974,13 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="43" selection-start="533" selection-end="533" vertical-scroll-proportion="-8.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/teammates/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="43" selection-start="533" selection-end="533" vertical-scroll-proportion="-5.5416665">
@@ -1023,16 +1016,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="92" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.25">
+        <state line="60" column="32" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="32" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.70873785">
+        <state line="18" column="20" selection-start="787" selection-end="791" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="25" selection-start="172" selection-end="172" vertical-scroll-proportion="0.5412371">
           <folding />
         </state>
       </provider>
