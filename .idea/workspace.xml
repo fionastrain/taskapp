@@ -49,12 +49,17 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding>
-                <marker date="1359996142000" expanded="true" signature="21:230" placeholder="..." />
-                <marker date="1359996142000" expanded="true" signature="28:192" placeholder="..." />
-                <marker date="1359996142000" expanded="true" signature="199:222" placeholder="..." />
-              </folding>
+            <state line="2" column="92" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/application.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="32" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.70873785">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -121,7 +126,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20130204045429_create_documents.rb" />
         <option value="$PROJECT_DIR$/app/views/documents/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/documents/_form.html.erb" />
-        <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/tasks/index.html.erb" />
@@ -130,6 +134,7 @@
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
       </list>
     </option>
   </component>
@@ -927,13 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="31" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.50970876">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/teammate.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="38" selection-start="67" selection-end="67" vertical-scroll-proportion="0.03640777">
@@ -966,17 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="11" selection-start="98" selection-end="98" vertical-scroll-proportion="0.29268292">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1359996142000" expanded="true" signature="21:230" placeholder="..." />
-            <marker date="1359996142000" expanded="true" signature="28:192" placeholder="..." />
-            <marker date="1359996142000" expanded="true" signature="199:222" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,6 +1019,20 @@
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="92" selection-start="29" selection-end="29" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="32" selection-start="2770" selection-end="2770" vertical-scroll-proportion="0.70873785">
           <folding />
         </state>
       </provider>
