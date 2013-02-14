@@ -1,6 +1,4 @@
 Taskapp::Application.routes.draw do
-  get "home/index"
-
   resources :documents
 
 
@@ -9,6 +7,8 @@ Taskapp::Application.routes.draw do
 
   resources :tasks
 
+
+  get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -14,7 +14,10 @@
   <b>Duedate:</b>
   <%= @task.duedate %>
 </p>
-
+<p>
+  <b>Associated doc:</b>
+  <%= @task.associated_doc %>
+</p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

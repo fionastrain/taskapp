@@ -36,7 +36,10 @@ padding-top: 60px;
     <th>Name</th>
     <th>Description</th>
     <th>Due Date</th>
+    <th>Associated Document</th>
+    <th>Responsibility</th>
     <th></th>
+    <th>Creator</th>
   </tr>
 
 <% @tasks.each do |task| %>
@@ -44,9 +47,16 @@ padding-top: 60px;
     <td><%= task.name %></td>
     <td><%= task.description %></td>
     <td><%= task.duedate.to_formatted_s(:long_ordinal) %></td>
+    <td><%= check_box_tag(task.associated_doc) %> </td>
+    <td><%= radio_button_tag(:teammates, "one") %>
+    <%= label_tag(:teammates_one, "1 Teammate") %></td>
+    <td><%= radio_button_tag(:teammates, "two") %>
+   <%= label_tag(:teammates_two, "Whole team") %></td>
+    <td><%= collection_select(:task, :name, Teammate.all, :name, :name) %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
   </tr>
 <% end %>
 </table>

@@ -23,10 +23,10 @@
     <%= f.label :duedate %><br />
     <%= f.date_select :duedate %>
   </div>
- <div>
-   <%= check_box_tag(:assoc_document) %>
-   <%= label_tag(:assoc_document, "Task has associated document") %>
- </div>
+    <div class="field">
+      <%= f.label :associated_doc %><br />
+      <%= f.check_box :associated_doc %>
+    </div>
 
   <div class="actions">
     <%= f.submit %>
