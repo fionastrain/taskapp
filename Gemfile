@@ -14,6 +14,13 @@ group :production do
   gem 'pg'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'capybara'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
