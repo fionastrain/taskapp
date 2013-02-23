@@ -1,6 +1,7 @@
 class TeammatesController < ApplicationController
   # GET /teammates
   # GET /teammates.json
+  before_filter :authenticate_user!
   def index
     @teammates = Teammate.all
 

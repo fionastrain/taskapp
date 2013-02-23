@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
+  before_filter :authenticate_user!
   def index
     @tasks = Task.all
 

@@ -18,19 +18,42 @@
               <li><a href= "/teammates">Teammates</a></li>
               <li><a href="/tasks">Tasks</a></li>
               <li><a href="/documents">Documents</a></li>
+
             </ul>
+            <div class="navbar-text pull-right">
+              <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <% else %>
+                  <%= link_to "Register", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <% end %>
+            </div>
 
           </div><!-- /.nav-collapse -->
+
         </div><!-- /.container -->
+
+
+      </div>
       </div><!-- /.navbar-inner -->
     </div><!-- /.navbar -->
   </div>
 </header>
-padding-top: 60px;
 <div class="row offset1">
-  margin-top: 200px;
-  margin-left: 60px;
+
   <h1>Welcome!</h1>
+  <br/>
+  <div class="btn-toolbar">
+    <% if user_signed_in? %>
+        <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-info"%>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-inverse" %>
+    <% else %>
+        <%= link_to "Register", new_user_registration_path,:class => "btn btn-primary"%>
+        <%= link_to "Login", new_user_session_path, :class => "btn btn-success" %>
+        <% end %>
+  </div>
 </div>
 </html>
 

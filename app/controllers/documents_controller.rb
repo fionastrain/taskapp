@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
+  before_filter :authenticate_user!
   def index
     @documents = Document.all
 
