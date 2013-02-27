@@ -1,25 +1,74 @@
-<%= form_for(@teammate) do |f| %>
-  <% if @teammate.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@teammate.errors.count, "error") %> prohibited this teammate from being saved:</h2>
+<header>
+  <div class="container">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">GetItDone</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+              <li><a href= "/teammates">Teammates</a></li>
+              <li><a href="/tasks">Tasks</a></li>
+              <li><a href="/documents">Documents</a></li>
 
-      <ul>
-      <% @teammate.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+            </ul>
+            <div class="navbar-text pull-right">
+              <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <% else %>
+                  <%= link_to "Register", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <% end %>
+            </div>
+
+          </div><!-- /.nav-collapse -->
+
+        </div><!-- /.container -->
+
+
+      </div>
+    </div><!-- /.navbar-inner -->
+  </div><!-- /.navbar -->
+  </div>
+</header>
+
+<%= form_for @teammate, :html => { :class => 'form-horizontal' } do |f| %>
+
+    <% if @teammate.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@teammate.errors.count, "error") %> prohibited this teammate from being saved:</h2>
+
+          <ul>
+            <% @teammate.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                teammates_path, :class => 'btn' %>
   </div>
 <% end %>

@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Task do
+  fixtures  :users
+  before do
+    sign_in
+  end
   before(:each) do
     @task1 = Task.new(name: "me", description: "this is a test")
   end
@@ -27,9 +31,9 @@ describe Task do
   end
 
   describe 'Adding a task' do
-    it 'requires a name' do
+    it 'requires a name', :js => true do
       visit tasks_path
-      click_link "New Task"
+      click_link_or_button('New')
       fill_in "Description", with: "this is a test"
       click_button "Create Task"
 
@@ -40,17 +44,19 @@ describe Task do
   end
 
   describe 'Adding a duplicate task' do
-    it 'cant be duplicate' do
+    it 'cant be duplicate', :js => true do
       visit tasks_path
-      click_link "New Task"
+      click_link_or_button('New')
       fill_in "Name", with: "TaskTest"
       click_button "Create Task"
       visit tasks_path
-      click_link "New Task"
+      click_link "New"
       fill_in "Name", with: "TaskTest"
       click_button "Create Task"
       error_message = "Name only one task with same name"
       page.should have_content(error_message)
     end
   end
+
 end
+

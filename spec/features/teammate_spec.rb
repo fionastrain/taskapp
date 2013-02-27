@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Teammate do
+  fixtures :users
+  before do
+    sign_in
+  end
     before(:each) do
       @team1 = Teammate.new(name: "me", email: "me@me.com")
     end
@@ -30,7 +34,7 @@ describe Teammate do
     describe 'Adding a teammate' do
       it 'requires a name' do
         visit teammates_path
-        click_link "New Teammate"
+        click_link "New"
         fill_in "Email", with: "fiona.strain1@gmail.com"
         click_button "Create Teammate"
 
@@ -44,12 +48,12 @@ describe Teammate do
     describe 'Adding a duplicate teammate' do
       it 'cant be duplicate' do
         visit teammates_path
-        click_link "New Teammate"
+        click_link "New"
         fill_in "Name", with: "Fiona"
         fill_in "Email", with: "fiona.strain1@gmail.com"
         click_button "Create Teammate"
         visit teammates_path
-        click_link "New Teammate"
+        click_link "New"
         fill_in "Name", with: "Fiona"
         click_button "Create Teammate"
         error_message = "Name Teammate already exists"
@@ -60,7 +64,7 @@ describe Teammate do
    describe 'Entering invalid email' do
      it 'cant be invalid' do
        visit teammates_path
-       click_link "New Teammate"
+       click_link "New"
        fill_in "Name", with: "Fake"
        fill_in "Email", with: "fakefake"
        click_button "Create Teammate"

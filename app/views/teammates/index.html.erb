@@ -11,50 +11,69 @@
           <a class="brand" href="/">GetItDone</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+              <li><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
               <li><a href= "/teammates">Teammates</a></li>
               <li><a href="/tasks">Tasks</a></li>
               <li><a href="/documents">Documents</a></li>
 
-
             </ul>
+            <div class="navbar-text pull-right">
+              <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <% else %>
+                  <%= link_to "Register", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <% end %>
+            </div>
 
           </div><!-- /.nav-collapse -->
+
         </div><!-- /.container -->
-      </div><!-- /.navbar-inner -->
-    </div><!-- /.navbar -->
+
+
+      </div>
+    </div><!-- /.navbar-inner -->
+  </div><!-- /.navbar -->
   </div>
 </header>
 
-<body>
-
-<div class="row offset1">
-
-  <h1>Teammates</h1>
+<%- model_class = Teammate -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-
-<table class="table-bordered offset1">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th></th>
-  </tr>
-
-<% @teammates.each do |teammate| %>
-  <tr>
-    <td><%= teammate.name %></td>
-    <td><%= teammate.email %></td>
-    <td><%= link_to 'Show', teammate %></td>
-    <td><%= link_to 'Edit', edit_teammate_path(teammate) %></td>
-    <td><%= link_to 'Delete', teammate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teammates.each do |teammate| %>
+      <tr>
+        <td><%= link_to teammate.id, teammate_path(teammate) %></td>
+        <td><%= teammate.name %></td>
+        <td><%= teammate.email %></td>
+        <td><%=l teammate.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_teammate_path(teammate), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      teammate_path(teammate),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<div class="row offset1" >
-  <%= link_to 'New Teammate', new_teammate_path %>
-</div>
-</body>
-
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_teammate_path,
+            :class => 'btn btn-primary' %>

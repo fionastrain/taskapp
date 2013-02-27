@@ -4,65 +4,76 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+
           </a>
           <a class="brand" href="/">GetItDone</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href= "/teammates">Teammates</a></li>
               <li><a href="/tasks">Tasks</a></li>
               <li><a href="/documents">Documents</a></li>
+
             </ul>
+            <div class="navbar-text pull-right">
+              <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <% else %>
+                  <%= link_to "Register", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <% end %>
+            </div>
+
           </div><!-- /.nav-collapse -->
+
         </div><!-- /.container -->
-      </div><!-- /.navbar-inner -->
-    </div><!-- /.navbar -->
+
+
+      </div>
+    </div><!-- /.navbar-inner -->
+  </div><!-- /.navbar -->
   </div>
 </header>
 
-<body>
-
-<div class="row offset1">
-
-  <h1>Tasks</h1>
+<%- model_class = Task -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-
-<table class="table-bordered offset1">
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Due Date</th>
-    <th>Associated Document</th>
-    <th>Responsibility</th>
-    <th></th>
-    <th>Creator</th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.name %></td>
-    <td><%= task.description %></td>
-    <td><%= task.duedate.to_formatted_s(:long_ordinal) %></td>
-    <td><%= check_box_tag(task.associated_doc) %> </td>
-    <td><%= radio_button_tag(:teammates, "one") %>
-    <%= label_tag(:teammates_one, "1 Teammate") %></td>
-    <td><%= radio_button_tag(:teammates, "two") %>
-   <%= label_tag(:teammates_two, "Whole team") %></td>
-    <td><%= collection_select(:task, :name, Teammate.all, :name, :name) %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-  </tr>
-<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:duedate) %></th>
+      <th><%= model_class.human_attribute_name(:associated_doc) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to task.id, task_path(task) %></td>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+        <td><%= task.duedate %></td>
+        <td><%= task.associated_doc %></td>
+        <td><%=l task.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_task_path(task), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      task_path(task),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br />
-<div class="row offset1" >
-  <%= link_to 'New Task', new_task_path %>
-</div>
-</body>
+<%= link_to 'New', new_task_path, :class => "btn btn-primary"%>
 

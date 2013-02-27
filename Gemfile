@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'bootstrap-sass','2.1.0.0'
 gem 'devise'
+gem 'twitter-bootstrap-rails'
+gem 'rspec', :require => false
+gem 'selenium-webdriver', '~> 2.30.0'
+
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
