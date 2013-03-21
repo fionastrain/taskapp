@@ -6,4 +6,10 @@ class Task < ActiveRecord::Base
   has_many :users
   has_one :document
   scope :due_soon, where(":due_date >= (Time.now.next_week..Time.now.next_week.end_of_week)")
+
+  def tasksduesoon
+    @dues = @tasks.where(":due_date >= (Time.now.next_week..Time.now.next_week.end_of_week)")
+    format.html # index.html.erb
+    format.json { render json: @dues}
+  end
 end
