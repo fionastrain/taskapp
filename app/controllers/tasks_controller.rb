@@ -70,6 +70,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def tasksduesoon
+    @dues = @tasks.where(":due_date >= (Time.now.next_week..Time.now.next_week.end_of_week)")
+    format.html # index.html.erb
+    format.json { render json: @dues}
+  end
+
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
