@@ -3,11 +3,16 @@ class TasksController < ApplicationController
   # GET /tasks.json
   before_filter :authenticate_user!
   def index
-    @tasks = Task.all
+
+    @dues = Task.due_soon.incomplete
+    @incomp = Task.incomplete
+    @comp = Task.complete
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @tasks }
+      format.json  { render :json => {:incomp => @incomp,
+                                      :dues => @dues,
+                                      :comp => @comp}}
     end
   end
 
@@ -69,11 +74,13 @@ class TasksController < ApplicationController
       end
     end
   end
+  # PUT /tasks/1/mark_completed
+  def mark_completed
+    @task = Task.find(params[:id])
+    @task.update_column(:completed, true)
 
-  def tasksduesoon
-    @dues = @tasks.where(":due_date >= (Time.now.next_week..Time.now.next_week.end_of_week)")
+    redirect_to :back
   end
-
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy

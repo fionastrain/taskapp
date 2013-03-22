@@ -6,9 +6,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'rspec', :require => false
 gem 'selenium-webdriver', '~> 2.30.0'
-
-
-
+gem 'jquery-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

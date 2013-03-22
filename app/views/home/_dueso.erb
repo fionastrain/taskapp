@@ -1,0 +1,6 @@
+<ul>
+  <% @dues.each do |due| %>
+      <li><%= link_to due.name,
+                      :action => 'show', :id => due.id  %></li>
+  <% end %>
+</ul>

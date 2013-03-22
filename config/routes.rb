@@ -9,8 +9,8 @@ Taskapp::Application.routes.draw do
 
   resources :tasks
 
-  match '/due_inweek' => 'tasks_controller#tasksduesoon', :as => 'due_inweek'
 
+  put '/tasks/:id/complete' => 'tasks#mark_completed', :as => 'mark_completed'
 
   get "home/index"
 

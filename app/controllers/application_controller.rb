@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  def tasksduesoon
+    @dues = Task.due_soon
+
+
+  end
 end
 
