@@ -29,7 +29,6 @@ module Taskapp
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     config.time_zone = 'Eastern Time (US & Canada)'
 
-
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
@@ -53,6 +52,7 @@ module Taskapp
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
+
 
     # Enable the asset pipeline
     config.assets.enabled = true
