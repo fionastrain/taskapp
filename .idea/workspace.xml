@@ -44,7 +44,7 @@
       <file leaf-file-name="new_task.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/notifications/new_task.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="257" selection-end="257" vertical-scroll-proportion="0.2777778">
+            <state line="10" column="22" selection-start="262" selection-end="262" vertical-scroll-proportion="0.2777778">
               <folding />
             </state>
           </provider>
@@ -1036,7 +1036,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/notifications/new_task.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="257" selection-end="257" vertical-scroll-proportion="0.2777778">
+        <state line="10" column="22" selection-start="262" selection-end="262" vertical-scroll-proportion="0.2777778">
           <folding />
         </state>
       </provider>
