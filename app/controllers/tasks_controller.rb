@@ -52,6 +52,8 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render json: @task, status: :created, location: @task }
+        @email = current_user.email
+        Notifications.new_task(@email).deliver
       else
         format.html { render action: "new" }
         format.json { render json: @task.errors, status: :unprocessable_entity }

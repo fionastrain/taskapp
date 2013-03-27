@@ -26,6 +26,9 @@ group :test do
   gem 'capybara'
 end
 
+group :development do
+  gem 'letter_opener'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
