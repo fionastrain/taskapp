@@ -44,7 +44,7 @@
       <file leaf-file-name="new_task.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/notifications/new_task.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="22" selection-start="262" selection-end="262" vertical-scroll-proportion="0.2777778">
+            <state line="8" column="59" selection-start="212" selection-end="212" vertical-scroll-proportion="0.22222222">
               <folding />
             </state>
           </provider>
@@ -139,8 +139,8 @@
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/application.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
         <option value="$PROJECT_DIR$/app/mailers/notifications.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/notifications/new_task.html.erb" />
       </list>
     </option>
@@ -1036,7 +1036,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/notifications/new_task.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="262" selection-end="262" vertical-scroll-proportion="0.2777778">
+        <state line="8" column="59" selection-start="212" selection-end="212" vertical-scroll-proportion="0.22222222">
           <folding />
         </state>
       </provider>
