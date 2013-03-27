@@ -6,8 +6,9 @@ class Notifications < ActionMailer::Base
   #
   #   en.notifications.new_task.subject
   #
-  def new_task(email)
+  def new_task(email,task)
     @email = email
+    @task = task
     @greeting = "Hi! You made a new task!"
 
     mail to: email
