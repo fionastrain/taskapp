@@ -23,9 +23,11 @@
                   Logged in as <strong><%= current_user.email %></strong>.
                   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
                   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                  <a href="#" onclick="displayhelp('use_text',this)">Help</a>
               <% else %>
                   <%= link_to "Register", new_user_registration_path, :class => 'navbar-link'  %> |
                   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                  <a href="#" onclick="displayhelp('logon_text',this)">Help</a>
               <% end %>
             </div>
 
@@ -47,16 +49,30 @@
     <% if user_signed_in? %>
         <%= link_to 'Edit Profile', edit_user_registration_path, :class => "btn btn-info"%>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-inverse" %>
+        <button class="btn btn-warning" type="button" onclick="displayhelp('use_text',this)">Help!</button>
     <% else %>
         <%= link_to "Register", new_user_registration_path,:class => "btn btn-primary"%>
         <%= link_to "Login", new_user_session_path, :class => "btn btn-success" %>
-        <% end %>
+        <button class="btn btn-warning"  type="button" onclick="displayhelp('logon_text',this)">Help!</button>
+    <% end %>
   </div>
-
-  <div class="btn-toolbar">
-
-  </div>
-
+  <div id="logon_text" class="hidden">'If you do not already have an account with GetItDone, Click register to create a' +
+    'logon email and password, otherwise click Login and proceed to Teammates, Tasks, and Documents' +
+    'to begin working on your projects!'</div>
+  <div id="use_text" class="hidden">
+    Use the navigation bar to access project information  <br>
+        - Teammates - view / edit teammates for your project <br>
+        - Tasks - view / add tasks for your project, as well as upcoming due dates  <br>
+        - Documents - view / add associated documents</div>
+  <script>
+    $('#logon_text').hide();
+    $('#use_text').hide();
+    function displayhelp(text_id, button){
+      $('#' + text_id).fadeIn('slow');
+        $('#' + text_id).delay(3000);
+      $('#' + text_id).fadeOut(2000);
+      };
+  </script>
 </div>
 </html>
 
