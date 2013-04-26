@@ -10,7 +10,7 @@ Taskapp::Application.routes.draw do
   resources :tasks
 
 
-  put '/tasks/:id/complete' => 'tasks#mark_completed', :as => 'mark_completed'
+  #put '/tasks/:id/complete' => 'tasks#mark_completed', :as => 'mark_completed'
 
   get "home/index"
 
