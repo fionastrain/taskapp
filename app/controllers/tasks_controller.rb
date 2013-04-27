@@ -2,11 +2,13 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   before_filter :authenticate_user!
+
+
   def index
 
-    @dues = Task.due_soon.incomplete
-    @incomp = Task.incomplete
-    @comp = Task.complete
+    @dues = current_user.getalltasks.due_soon.incomplete
+    @incomp = current_user.getalltasks.incomplete
+    @comp = current_user.getalltasks.complete
 
     respond_to do |format|
       format.html # index.html.erb

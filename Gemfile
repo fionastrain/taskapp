@@ -7,6 +7,7 @@ gem 'twitter-bootstrap-rails'
 gem 'rspec', :require => false
 gem 'selenium-webdriver', '~> 2.30.0'
 gem 'jquery-rails'
+gem 'simple_calendar', '~> 0.1.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

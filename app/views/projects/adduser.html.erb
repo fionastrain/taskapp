@@ -1,0 +1,19 @@
+<%= render :partial => 'home/header' %>
+<%- model_class = Project -%>
+<div class="page-header">
+  <h1>Add New Teammate to Project</h1>
+</div>
+<%= form_for(@project) do |f| %>
+<% for user in User.find(:all) %>
+<div>
+  <%= check_box_tag "project[user_ids][]", user.id,
+  @project.users.include?(user) %>
+  <%=  user.name%>
+  <%=  user.email %>
+</div>
+<% end %>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
