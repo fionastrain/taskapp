@@ -3,6 +3,7 @@ class Task < ActiveRecord::Base
   validates :name, :presence => true
   validates :name, :uniqueness => {:value => true, :message => "only one task with same name"}
   validates :description, :length => {:maximum => 50}
+  validates :project_id, :presence => true
 
   has_one :document
   belongs_to :project
@@ -18,7 +19,11 @@ class Task < ActiveRecord::Base
   end
 
   def getprojectname(projectid)
-    pro =  Project.find(projectid).name
+    if(@projectid.nil?)
+      pro = "No Associated Project"
+    else
+      pro =  Project.find(projectid).name
+      end
   end
 
 

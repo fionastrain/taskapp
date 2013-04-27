@@ -76,6 +76,8 @@ class ProjectsController < ApplicationController
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
+
+    current_user.sendnotification(@project.id)
   end
 
   # DELETE /projects/1

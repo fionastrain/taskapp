@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+<h1>Message from GetItDone</h1>
+<p>
+  <%= @addername %> added a new user to one of your projects! <br/>
+  Project Name: <%= @project.name %><br/>
+  Project Teammates: <%=  @project.getnames %>
+</p>
+</body>
+</html>

@@ -11,13 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427002112) do
+ActiveRecord::Schema.define(:version => 20130427025859) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
     t.datetime "datemodified"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "docurl"
+    t.integer  "project_id"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "projects", :force => true do |t|

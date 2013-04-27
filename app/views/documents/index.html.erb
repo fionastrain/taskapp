@@ -8,9 +8,9 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:datemodified) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th> Link to Document</th>
+      <th> Associated Project</th>
+      <th> Date Added</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
     <% @documents.each do |document| %>
       <tr>
         <td><%= link_to document.id, document_path(document) %></td>
-        <td><%= document.name %></td>
-        <td><%= document.datemodified %></td>
-        <td><%=l document.created_at %></td>
+        <td><%= link_to document.name, document.docurl %></td>
+        <td><%= document.getprojectname(document.project_id) %></td>
+        <td><%= document.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_document_path(document), :class => 'btn btn-mini' %>

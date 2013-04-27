@@ -16,5 +16,12 @@ class User < ActiveRecord::Base
        assoctasks = Task.where(:project_id => self.project_ids)
   end
 
+  def sendnotification(projectid)
+    @proj = Project.find(projectid)
+    @proj.user_ids.each do |userid|
+      @email = User.find(userid).email
+      Notifications.user_added_to_project(@email, @proj, self.name).deliver
+    end
+  end
 
 end

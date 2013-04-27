@@ -38,18 +38,8 @@
         <%= f.collection_select(:project_id, current_user.projects , :id, :name) %>
       </div>
     </div>
-  <div class="control-group">
-    <%= f.label :document, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :document_id, Document.all , :name, :name, options ={:prompt =>"Select a document"} %>
-    </div>
-  </div>
-    <div class="control-group">
-      <%= f.label :teammate, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.collection_select :teammate_id, Teammate.all , :name, :name, options ={:prompt =>"Teammate Responsible"} %>
-      </div>
-    </div>
+
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

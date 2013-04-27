@@ -13,4 +13,14 @@ class Notifications < ActionMailer::Base
 
     mail to: email
   end
+
+  def user_added_to_project(email,project, addername)
+    @email = email
+    @project = project
+    @addername = addername
+    @greeting = "Hi! A new user has been added to a project at GetItDone!"
+
+    mail to: email
+  end
+
 end

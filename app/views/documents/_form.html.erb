@@ -19,12 +19,21 @@
       <%= f.text_field :name, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :datemodified, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.datetime_select :datemodified, :class => 'datetime_select' %>
+
+    <div class="control-group">
+      <%= f.label 'Document Link', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :docurl, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
+
+
+    <div class="control-group">
+      <%= f.label :project, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select(:project_id, current_user.projects , :id, :name) %>
+      </div>
+    </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
