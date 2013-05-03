@@ -11,4 +11,10 @@ class Document < ActiveRecord::Base
       pro =  Project.find(projectid).name
     end
   end
+
+  def checkurl
+    unless self.docurl[/^http:\/\//] || self.docurl[/^https:\/\//]
+      self.docurl = 'http://' + self.docurl
+    end
+  end
 end
