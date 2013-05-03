@@ -5,7 +5,7 @@ gem 'bootstrap-sass','2.1.0.0'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'rspec', :require => false
-gem 'selenium-webdriver'
+gem 'selenium-webdriver', '~> 2.32.1'
 gem 'jquery-rails'
 gem 'simple_calendar', '~> 0.1.5'
 # Bundle edge Rails instead:

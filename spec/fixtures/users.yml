@@ -4,7 +4,7 @@ fiona:
 # test1234
   encrypted_password: $2a$10$xB7o.ckoddl2GGXgPIL/7.gZMYF..fHOWV7/RfbWqyhwT9iaurzJS
 
-  test:
-    email: test@testfi.com
-  # test1234
-    encrypted_password: $2a$10$pgGvQC87x5Vj5UkTYXhHyu.9E9HbX7kcTpq2/CY0iZ79yrnrlezXG
+test:
+  email: test@testfi.com
+# test1234
+  encrypted_password: $2a$10$pgGvQC87x5Vj5UkTYXhHyu.9E9HbX7kcTpq2/CY0iZ79yrnrlezXG

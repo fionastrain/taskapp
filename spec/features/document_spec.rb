@@ -10,7 +10,7 @@ describe Document do
   it "require a name" do
      doc = Document.create
      doc.name = ""
-     doc.url = "www"
+     doc.docurl = "www"
      doc.should_not be_valid
     end
 
