@@ -45,3 +45,13 @@ def sign_in
   fill_in 'Password', with: 'test1234'
   click_button 'Sign in'
 end
+
+def register_other
+  visit new_user_registration_path
+  fill_in 'Email', with: 'fiona@test.com'
+  fill_in 'Name', with: 'Fi Test'
+  first(:field, 'Password').set('test1234')
+  fill_in 'Password confirmation', with: 'test1234'
+  click_button 'Sign up'
+  first(:link, 'Logout').click
+end

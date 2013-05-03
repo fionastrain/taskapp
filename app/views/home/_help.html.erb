@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+
+<div id="logon_dialog" title="Basic dialog">
+  <p>If you do not already have an account with GetItDone:  <br>
+    Click register to create a logon email and password  <br>
+    If you already registered: <br>
+    click Login and proceed to Projects, Tasks, and Documents to begin working on your projects!'</p>
+</div>
+
+<div id="use_dialog" title="Basic dialog">
+  <p>Use the navigation bar to access project information  <br>
+    - Projects - View your projects and teammates for each project, as well as add teammates to projects! <br>
+    - Tasks - view / add tasks for your projects, as well as upcoming due dates  <br>
+    - Documents - view / add links to associated documents for your projects!</p>
+</div>
+
+<script>
+    $('#use_dialog').hide();
+    $('#logon_dialog').hide();
+    function displayhelp(text_id, button){
+        $('#' + text_id).dialog();
+    };
+</script>

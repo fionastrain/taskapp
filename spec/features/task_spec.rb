@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'capybara/rspec'
+require 'capybara/rails'
 
 describe Task do
   fixtures  :users
@@ -12,6 +14,16 @@ describe Task do
     tsk = Task.create
     tsk.should_not be_valid
     tsk.name="task1"
+    tsk.project_id="1"
+    tsk.should be_valid
+  end
+
+  it "require project" do
+    tsk = Task.create
+    tsk.should_not be_valid
+    tsk.name="task1"
+    tsk.should_not be_valid
+    tsk.project_id="1"
     tsk.should be_valid
   end
 
@@ -45,6 +57,10 @@ describe Task do
 
   describe 'Adding a duplicate task' do
     it 'cant be duplicate', :js => true do
+      visit projects_path
+      click_link_or_button('New')
+      fill_in "Name", with: "ProjectTest"
+      click_button "Create Project"
       visit tasks_path
       click_link_or_button('New')
       fill_in "Name", with: "TaskTest"
@@ -58,5 +74,6 @@ describe Task do
     end
   end
 
-end
 
+
+end

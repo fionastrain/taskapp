@@ -1,6 +1,7 @@
 class Document < ActiveRecord::Base
   attr_accessible :datemodified, :name, :docurl, :project_id
   validates :name, :presence => true
+  validates :docurl, :presence => true
   belongs_to :project
 
   def getprojectname(projectid)

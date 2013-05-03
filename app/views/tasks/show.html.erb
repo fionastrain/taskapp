@@ -1,4 +1,5 @@
 <%= render :partial => 'home/header' %>
+<%= render :partial => 'home/help' %>
 <%- model_class = Task -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
@@ -11,8 +12,7 @@
   <dd><%= @task.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:duedate) %>:</strong></dt>
   <dd><%= @task.duedate %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:associated_doc) %>:</strong></dt>
-  <dd><%= @task.associated_doc %></dd>
+
 </dl>
 
 <div class="form-actions">

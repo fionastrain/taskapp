@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427025859) do
+ActiveRecord::Schema.define(:version => 20130502184919) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(:version => 20130427025859) do
     t.datetime "updated_at",   :null => false
     t.string   "docurl"
     t.integer  "project_id"
-  end
-
-  create_table "events", :force => true do |t|
-    t.string   "name"
-    t.datetime "start_at"
-    t.datetime "end_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "projects", :force => true do |t|
@@ -45,20 +37,10 @@ ActiveRecord::Schema.define(:version => 20130427025859) do
     t.string   "name"
     t.string   "description"
     t.date     "duedate"
-    t.boolean  "associated_doc"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.integer  "teammate_id"
-    t.integer  "document_id"
-    t.boolean  "completed",      :default => false, :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "completed",   :default => false, :null => false
     t.integer  "project_id"
-  end
-
-  create_table "teammates", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

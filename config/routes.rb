@@ -14,7 +14,11 @@ Taskapp::Application.routes.draw do
   resources :teammates
 
 
-  resources :tasks
+  resources :tasks do
+    member do
+      get 'mark_completed'
+    end
+  end
 
 
   put '/tasks/:id/complete' => 'tasks#mark_completed', :as => 'mark_completed'

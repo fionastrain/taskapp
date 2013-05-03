@@ -82,8 +82,9 @@ class TasksController < ApplicationController
   def mark_completed
     @task = Task.find(params[:id])
     @task.update_column(:completed, true)
-
-    redirect_to :back
+    respond_to do |format|
+         format.html { redirect_to tasks_url }
+    end
   end
   # DELETE /tasks/1
   # DELETE /tasks/1.json

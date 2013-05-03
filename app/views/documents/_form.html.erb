@@ -1,5 +1,5 @@
 <%= render :partial => 'home/header' %>
-
+<%= render :partial => 'home/help' %>
 <%= form_for @document, :html => { :class => 'form-horizontal' } do |f| %>
     <% if @document.errors.any? %>
         <div id="error_explanation">
