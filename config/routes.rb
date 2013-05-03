@@ -20,9 +20,6 @@ Taskapp::Application.routes.draw do
     end
   end
 
-
-  put '/tasks/:id/complete' => 'tasks#mark_completed', :as => 'mark_completed'
-
   get "home/index"
 
   # The priority is based upon order of creation:
