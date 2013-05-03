@@ -16,7 +16,7 @@ Taskapp::Application.routes.draw do
 
   resources :tasks do
     member do
-      get 'mark_completed'
+      put 'mark_completed'
     end
   end
 

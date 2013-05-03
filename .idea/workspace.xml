@@ -5,7 +5,7 @@
     <ignored path="taskapp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html.erb" changelist="fe325afe-1bbd-4328-b4ff-5e00b63c78c6" time="1367543246311" ignored="false" />
-    <file path="/routes.rb" changelist="fe325afe-1bbd-4328-b4ff-5e00b63c78c6" time="1367542576849" ignored="false" />
+    <file path="/routes.rb" changelist="fe325afe-1bbd-4328-b4ff-5e00b63c78c6" time="1367544510802" ignored="false" />
     <file path="/new.html.erb" changelist="fe325afe-1bbd-4328-b4ff-5e00b63c78c6" time="1366997855869" ignored="false" />
     <file path="/user.rb" changelist="fe325afe-1bbd-4328-b4ff-5e00b63c78c6" time="1367036866659" ignored="false" />
     <file path="/ProjectsUsers.rb" changelist="fe325afe-1bbd-4328-b4ff-5e00b63c78c6" time="1367002606419" ignored="false" />
@@ -48,15 +48,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/projects/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="16" selection-start="632" selection-end="632" vertical-scroll-proportion="-13.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tasks/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -132,7 +123,16 @@
       <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.5206612">
+            <state line="18" column="10" selection-start="228" selection-end="228" vertical-scroll-proportion="0.446281">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tasks_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="12" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,8 +178,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="430" />
-    <option name="y" value="22" />
+    <option name="x" value="59" />
+    <option name="y" value="68" />
     <option name="width" value="1066" />
     <option name="height" value="776" />
   </component>
@@ -1382,7 +1382,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="430" y="22" width="1066" height="776" extended-state="0" />
+    <frame x="59" y="68" width="1066" height="776" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1461,13 +1461,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="1" selection-start="571" selection-end="571" vertical-scroll-proportion="-8.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/task.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="10" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0">
@@ -1566,9 +1559,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="12" selection-start="1806" selection-end="1806" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="259" selection-end="259" vertical-scroll-proportion="0.5206612">
+        <state line="18" column="10" selection-start="228" selection-end="228" vertical-scroll-proportion="0.446281">
           <folding />
         </state>
       </provider>
